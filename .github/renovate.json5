@@ -1,0 +1,20 @@
+{
+    $schema: "https://docs.renovatebot.com/renovate-schema.json", // up to date schema with all supported properties
+    extends: [
+        "config:best-practices",
+        ":approveMajorUpdates",// require explicit update approval on the dashboard before opening PR
+    ],
+    transitiveRemediation: true,
+    "packageRules": [
+        {
+            "matchPackagePatterns": [
+                "*"
+            ],
+            "matchUpdateTypes": [
+                "patch"
+            ],
+            "groupName": "all patch dependencies",
+            "groupSlug": "all-patch"
+        }
+    ]
+}
