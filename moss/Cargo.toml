@@ -5,8 +5,10 @@ edition.workspace = true
 
 [dependencies]
 config = { path = "../crates/config" }
+container = { path = "../crates/container" }
 dag = { path = "../crates/dag" }
 stone = { path = "../crates/stone" }
+triggers = { path = "../crates/triggers" }
 tui = { path = "../crates/tui" }
 vfs = { path = "../crates/vfs" }
 
@@ -19,20 +21,15 @@ diesel_migrations.workspace = true
 itertools.workspace = true
 futures.workspace = true
 hex.workspace = true
-libsqlite3-sys.workspace = true
 log.workspace = true
 nix.workspace = true
 rayon.workspace = true
 reqwest.workspace = true
 serde.workspace = true
-serde_yaml.workspace = true
 sha2.workspace = true
 strum.workspace = true
 tokio.workspace = true
-tokio-stream.workspace = true
 tokio-util.workspace = true
 thiserror.workspace = true
 url.workspace = true
 xxhash-rust.workspace = true
-triggers = { version = "0.1.0", path = "../crates/triggers" }
-container = { version = "0.1.0", path = "../crates/container" }
