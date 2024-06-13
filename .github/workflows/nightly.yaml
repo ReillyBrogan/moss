@@ -17,7 +17,7 @@ jobs:
 
     steps:
     - name: Checkout source
-      uses: actions/checkout@v4
+      uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
 
     - name: Install musl
       run: sudo apt-get install musl-tools
@@ -37,7 +37,7 @@ jobs:
         components: rust-src
 
     - name: Cargo Cache
-      uses: actions/cache@v3
+      uses: actions/cache@e12d46a63a90f2fae62d114769bbf2a179198b5c # v3
       with:
         path: |
           ~/.cargo/registry/index/
@@ -59,7 +59,7 @@ jobs:
       id: get_date
 
     - name: Push nightly tag
-      uses: mathieudutour/github-tag-action@v6.1
+      uses: mathieudutour/github-tag-action@fcfbdceb3093f6d85a3b194740f8c6cec632f4e2 # v6.1
       id: create_tag
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -67,7 +67,7 @@ jobs:
         tag_prefix: nightly-
 
     - name: Upload binaries to nightly release
-      uses: svenstaro/upload-release-action@v2
+      uses: svenstaro/upload-release-action@04733e069f2d7f7f0b4aebc4fbdbce8613b03ccd # v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: release/moss*
@@ -79,7 +79,7 @@ jobs:
         body: "Nightly release of moss"
 
     - name: Clean up old nightly releases
-      uses: dev-drprasad/delete-older-releases@v0.3.2
+      uses: dev-drprasad/delete-older-releases@5494cd8b61c31b3c7a15f6267901195ec7df64e8 # v0.3.2
       with:
         keep_latest: 5
         delete_tags: true
