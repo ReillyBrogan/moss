@@ -21,7 +21,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: typos-action
-      uses: crate-ci/typos@v1.20.8
+      uses: crate-ci/typos@c16dc8f5b4a7ad6211464ecf136c69c851e8e83c # v1.22.9
 
     - name: Install LLVM and Clang
       run: |
